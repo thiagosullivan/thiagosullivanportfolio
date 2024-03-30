@@ -14,7 +14,7 @@ const Contact = () => {
                             Say Hello 👋
                         </div>
                         <h1 className="h1 max-w-md mb-8">Let's Work Together.</h1>
-                        <p className="subtitle max-w-[400px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, earum.</p>
+                        <p className="subtitle max-w-[400px]">You can contact me however you prefer. I'll answer as soon as possible!</p>
                     </div>
                     {/* illustration */}
                     <div className="hidden xl:flex w-full bg-contact_illustration_light dark:bg-contact_illustration_dark bg-contain bg-top bg-no-repeat">
@@ -27,17 +27,17 @@ const Contact = () => {
                         {/* mail */}
                         <div className="flex items-center gap-x-8">
                             <MailIcon size={18} className="text-primary" />
-                            <div>youremail@gmail.com</div>
+                            <div>thiago.sullivan.dev@gmail.com</div>
                         </div>
                         {/* address */}
                         <div className="flex items-center gap-x-8">
                             <HomeIcon size={18} className="text-primary" />
-                            <div>8420 Pine Avenue, Meadowville MC 842</div>
+                            <div>Londrina, Paraná - Brazil</div>
                         </div>
                         {/* phone */}
                         <div className="flex items-center gap-x-8">
                             <PhoneCall size={18} className="text-primary" />
-                            <div>+43 99999-8888</div>
+                            <div>+55 (43) 99848-1727</div>
                         </div>
                         <Form />
                     </div>

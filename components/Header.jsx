@@ -7,10 +7,28 @@ import Logo from './Logo';
 import Nav from './Nav';
 import MobileNav from './MobileNav';
 import { usePathname } from 'next/navigation';
+import { Button } from './ui/button';
+import Image from 'next/image';
 
-const Header = () => {
+import BraFlag from '../public/brazil-flag.jpg';
+import UsaFlag from '../public/usa-flag.jpg';
+
+import { changeLanguage } from '@/redux/features/language';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '@/redux/store';
+
+const Header = ({language}) => {
     const [header, setHeader] = useState(false);
+    const [englishChoice, setEnglishChoice] = useState("english");
     const pathname = usePathname();
+
+    const dispatch = useDispatch();
+    // console.log(englishChoice, "IDIOMA SELECIONADO")
+
+    useEffect(() => {
+        dispatch(changeLanguage(englishChoice));
+            // console.log("USE EFFECT", englishChoice)
+    }, [englishChoice])
     
     useEffect(()=> {
         const scrollYPos = window.addEventListener('scroll', ()=> {
@@ -37,12 +55,42 @@ const Header = () => {
                             containerStyles={'hidden xl:flex gap-x-8 items-center'}
                             linkStyles="relative hover:text-primary transition-all"
                             underlineStyles="absolute left-0 top-full h-[2px] bg-primary w-full"
+                            englishChoice={englishChoice}
                         />
                         <ThemeToggle />
                         {/* Mobile Nav */}
                         <div className='xl:hidden'>
                             <MobileNav />
                         </div>
+                        {/* <div className='flex flex-col items-center'>
+                                {englishChoice === "english" ? <p>Language:</p> : <p>Idioma:</p>}
+                            <div className='flex gap-x-1 mt-1'>
+                                <Button
+                                    className="border-none bg-transparent w-[30px] h-[18px] min-w-0 p-0 relative cursor-pointer"
+                                    value="portuguese"
+                                    onClick={() => setEnglishChoice("portuguese")}
+                                >
+                                    <Image
+                                        src={BraFlag}
+                                        alt="Português"
+                                        fill
+                                        className='absolute'
+                                    />
+                                </Button>
+                                <Button
+                                    className="border-none bg-transparent w-[30px] h-[18px] min-w-0 p-0 relative cursor-pointer"
+                                    value="english"
+                                    onClick={() => setEnglishChoice("english")}
+                                >
+                                    <Image
+                                        src={UsaFlag}
+                                        alt="English"
+                                        fill
+                                        className='absolute'
+                                    />
+                                </Button>
+                            </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

@@ -11,17 +11,17 @@ const servicesData = [
     {
         icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
         title: "Web Design",
-        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, molestias."
+        description: "Elevating digital experiences through masterful graphic web design."
     },
     {
         icon: <Blocks size={72} strokeWidth={0.8} />,
         title: "Web Development",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis beatae facere eum!"
+        description: "Crafting sleek and functional online experiences through expert web development skills."
     },
     {
         icon: <Gem size={72} strokeWidth={0.8} />,
         title: "App development",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, dolor illo commodi unde quo voluptates."
+        description: "Unlocking innovation on your phone app, crafting intuitive and impactful digital solutions."
     },
 ]
 

@@ -10,11 +10,18 @@ import {
     Calendar, 
     Briefcase
 } from 'lucide-react'
+import Link from "next/link";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+  } from "./ui/tooltip";
 
 const infoData = [
     {
         icon: <User2 size={20} />,
-        text: 'Ryan Davis',
+        text: 'Thiago Santos',
     },
     {
         icon: <PhoneCall size={20} />,
@@ -30,7 +37,11 @@ const infoData = [
     },
     {
         icon: <GraduationCap size={20} />,
-        text: 'Master on Software Engineer',
+        text: 'Bachalor on Software Engineer',
+    },
+    {
+        icon: <GraduationCap size={20} />,
+        text: 'Bachalor in Product Design',
     },
     {
         icon: <HomeIcon size={20} />,
@@ -43,19 +54,24 @@ const qualificationData = [
         title: 'education',
         data: [
             {
-                university: 'Example University',
-                qualification: 'Bachalor of Science',
-                years: '2015 - 2018'
+                university: 'UNOPAR - Universidade Norte do Paraná',
+                qualification: 'Bachalor in Product Design',
+                years: '2013 - 2017'
             },
             {
-                university: 'Another University',
-                qualification: 'Master of Arts',
-                years: '2019 - 2021'
+                university: 'Alura Cursos',
+                qualification: 'Web Development',
+                years: '2017 - 2018'
             },
             {
-                university: 'Yet Another University',
-                qualification: 'Ph.D in Computer Science',
-                years: '2021 - 2025'
+                university: 'Rocketseat',
+                qualification: 'Fullstack Development',
+                years: '2020 - 2022'
+            },
+            {
+                university: 'UNIFIL',
+                qualification: 'Software Engineer',
+                years: '2023 - 2027'
             }
 
         ]
@@ -64,19 +80,24 @@ const qualificationData = [
         title: 'experience',
         data: [
             {
-                company: 'ABC Inc.',
-                role: 'Software Engineer',
-                years: '2018 - 2020'
+                company: 'BizCommerce',
+                role: 'Frontend Developer',
+                years: 'Jun 2019 - Feb 2020'
             },
             {
-                company: 'XYZ Corporation',
-                role: 'Senior Developer',
-                years: '2020 - 2022'
+                company: 'Agência Guia-se Londrina',
+                role: 'Fullstack Developer',
+                years: 'Feb 2020 - Jul 2021'
             },
             {
-                company: 'Tech Innovators',
-                role: 'Lead Developer',
-                years: '2022 - Present'
+                company: 'Compass UOL',
+                role: 'Frontend Developer',
+                years: 'Jul 2021 - May 2023'
+            },
+            {
+                company: 'Surto MKT',
+                role: 'Fullstack Developer',
+                years: 'Jan 2023 - Aug 2023'
             },
         ]
     }
@@ -87,16 +108,25 @@ const skillData = [
         title: 'skills',
         data: [
             {
-                name: 'HTML, CSS',
+                name: 'Responsive Design,',
             },
             {
-                name: 'Front-end Development',
+                name: 'Optimization, accessibility and SEO,',
             },
             {
-                name: 'Javascript, PHP',
+                name: 'Experience with e-commerce,',
             },
             {
-                name: 'Back-end Development',
+                name: ' Teamwork and leadership',
+            },
+            {
+                name: 'Hooks, Redux, ContextAPI,',
+            },
+            {
+                name: "Construction of landing pages, blogs, ecommerce, dashboards,"
+            },
+            {
+                name: "Experience creating projects from scratch to deploy"
             },
         ]
     },
@@ -104,16 +134,99 @@ const skillData = [
         title: 'tools',
         data: [
             {
-                imgPath: '/about/vscode.svg',
+                imgPath: '/about/html5.svg',
+                link: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+                name: 'HTML5',
+            },
+            {
+                imgPath: '/about/css3.svg',
+                link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+                name: 'CSS3',
+            },
+            {
+                imgPath: '/about/react.svg',
+                link: 'https://react.dev/',
+                name: 'ReactJS',
+            },
+            {
+                imgPath: '/about/nextjs.svg',
+                link: 'https://nextjs.org/',
+                name: 'NextJS',
+            },
+            {
+                imgPath: '/about/nodejs.svg',
+                link: 'https://nodejs.org/en',
+                name: 'NodeJS',
+            },
+            {
+                imgPath: '/about/tailwind-css.svg',
+                link: 'https://tailwindcss.com/',
+                name: 'Tailwind CSS',
+            },
+            {
+                imgPath: '/about/sass.svg',
+                link: 'https://sass-lang.com/',
+                name: 'SASS',
+            },
+            {
+                imgPath: '/about/mongo-db.svg',
+                link: 'https://www.mongodb.com/',
+                name: 'MongoDB',
+            },
+            {
+                imgPath: '/about/docker.svg',
+                link: 'https://www.docker.com/',
+                name: 'Docker',
+            },
+            {
+                imgPath: '/about/postgresql.svg',
+                link: 'https://www.postgresql.org/',
+                name: 'PostgresQL',
+            },
+            {
+                imgPath: '/about/eslint.svg',
+                link: 'https://eslint.org/',
+                name: 'ESLint',
             },
             {
                 imgPath: '/about/figma.svg',
+                link: 'https://www.figma.com/',
+                name: 'Figma',
             },
             {
-                imgPath: '/about/notion.svg',
+                imgPath: '/about/firebase.svg',
+                link: 'https://firebase.google.com/',
+                name: 'Firebase',
             },
             {
-                imgPath: '/about/wordpress.svg',
+                imgPath: '/about/github.svg',
+                link: 'https://github.com/',
+                name: 'Github',
+            },
+            {
+                imgPath: '/about/graphql.svg',
+                link: 'https://graphql.org/',
+                name: 'GraphQL',
+            },            
+            {
+                imgPath: '/about/photoshop.svg',
+                link: 'https://www.adobe.com/br/products/photoshop.html',
+                name: 'Photoshop',
+            },            
+            {
+                imgPath: '/about/vercel.svg',
+                link: 'https://vercel.com/',
+                name: 'Vercel',
+            },
+            {
+                imgPath: '/about/vite-js.svg',
+                link: 'https://vitejs.dev/',
+                name: 'ViteJS',
+            },
+            {
+                imgPath: '/about/vs-code.svg',
+                link: 'https://code.visualstudio.com/',
+                name: 'VS Code',
             },
             
         ]
@@ -132,7 +245,10 @@ const About = () => {
                 <div className="flex flex-col xl:flex-row">
                     {/* Image */}
                     <div className="hidden xl:flex flex-1 relative">
-                        <DevImg containerStyles='bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative' imgSrc="/about/developer.png" />
+                        {/* <DevImg containerStyles='bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative' imgSrc="/about/developer.png" /> */}
+                        <div className="w-[505px] h-[505px] bg-no-repeat relative">
+                            <Image src="/about/sully.png" fill priority alt="Dev Image"/>
+                        </div>
                     </div>
                     {/* Tabs */}
                     <div className="flex-1">
@@ -147,8 +263,8 @@ const About = () => {
                                 {/* personal */}
                                 <TabsContent value="personal">
                                     <div className="text-center xl:text-left">
-                                        <h3 className="h3 mb-4">Unmatched Service Quality for Over 10 Years</h3>
-                                        <p className="subtitle max-w-xl mx-auto xl:mx-0">I specialize in crafting intuitive websites with cutting-edge technology, delivering dynamic and engaging user experiences</p>
+                                        <h3 className="h3 mb-4">Deliverying Quality projects for over 4 Years</h3>
+                                        <p className="subtitle max-w-xl mx-auto xl:mx-0">I specialize in crafting intuitive and responsive websites, phone apps, and database with cutting-edge technology, delivering dynamic and engaging user experience.</p>
                                         {/* icons */}
                                         <div className="grid xl:grid-cols-2 gap-4 mb-12">
                                             {infoData.map((item, index) => {
@@ -164,7 +280,7 @@ const About = () => {
                                         <div className="flex flex-col gap-y-2">
                                             <div className="text-primary">Language Skill</div>
                                             <div className="border-b border-border"></div>
-                                            <div>English, French, Spanish, Italian</div>
+                                            <div>English (B2), Portuguese (Native)</div>
                                         </div>
                                     </div>
                                 </TabsContent>
@@ -239,11 +355,11 @@ const About = () => {
                                             <h4 className="text-xl font-semibold mb-2">Skills</h4>
                                             <div className="border-b border-border mb-4"></div>
                                             {/* skill list */}
-                                            <div>
+                                            <div className="grid grid-cols-2">
                                                 {getData(skillData, 'skills').data.map((item, index) => {
                                                     const {name} = item;
                                                     return (
-                                                        <div className="w-2/4 text-center xl:text-lest mx-auto xl:mx-0" key={index}>
+                                                        <div className="text-center xl:text-lest mx-auto xl:mx-0 " key={index}>
                                                             <div className="font-medium">{name}</div>
                                                         </div>
                                                     )
@@ -255,17 +371,29 @@ const About = () => {
                                             <h4 className="text-xl font-semibold mb-2 xl:text-left">Tools</h4>
                                             <div className="border-b border-border mb-4"></div>
                                             {/* tools list */}
-                                            <div className="flex gap-x-8 justify-center xl:justify-start">
+                                            <div className="flex flex-wrap gap-4 justify-center xl:justify-start">
                                                 {getData(skillData, 'tools').data.map((item, index)=> {
-                                                    const {imgPath} = item;
+                                                    const {imgPath, link, name} = item;
                                                     return (
                                                         <div key={index}>
-                                                            <Image
-                                                                src={imgPath}
-                                                                width={48}
-                                                                height={48}
-                                                                alt="image"
-                                                            />
+                                                            <TooltipProvider>
+                                                                <Tooltip>
+                                                                    <TooltipTrigger>
+                                                                        <Link href={link} target="_blank" noopener noreferrer>
+                                                                            <Image
+                                                                                src={imgPath}
+                                                                                width={48}
+                                                                                height={48}
+                                                                                alt="image"
+                                                                                className="grayscale hover:grayscale-0 transition-all"
+                                                                            />
+                                                                        </Link>
+                                                                    </TooltipTrigger>
+                                                                    <TooltipContent>
+                                                                        <p>{name}</p>
+                                                                    </TooltipContent>
+                                                                </Tooltip>
+                                                            </TooltipProvider>
                                                         </div>
                                                     )
                                                 })}
