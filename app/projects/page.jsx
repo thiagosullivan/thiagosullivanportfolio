@@ -1,129 +1,54 @@
-'use client';
+import { fetchHygraphQuery } from "@/utils/fetch-hygraph-query";
+import ProjectTabs from "./component/projects-tab";
+import Link from "next/link";
 
-import { useState } from "react";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { TabsContent } from "@radix-ui/react-tabs";
-import ProjectCard from "@/components/ProjectCard";
+const getPageData = async () => {
+    const query = `
+      query blogPosts {
+        blogPosts {
+            createdAt
+            id
+            slug
+            tec
+            postText {
+              raw
+            }
+            description
+            imagePost {
+              url
+            }
+            resume
+            title
+            projectImages {
+              id
+              url
+            }
+            technology {
+              technologyName
+            }    
+          }
+        technologies {
+            technologyName
+        }
+      }
+    `
+  
+    return fetchHygraphQuery(query)
+  }
 
-const ProjectData = [
-    {
-        image: '/work/3.png',
-        category: 'react js',
-        name: 'Nexa Website',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, non.',
-        link: '/',
-        github: '/',
-    },
-    {
-        image: '/work/4.png',
-        category: 'react js',
-        name: 'Solstice Website',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, non.',
-        link: '/',
-        github: '/',
-    },
-    {
-        image: '/work/2.png',
-        category: 'react js',
-        name: 'Evolve Website',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, non.',
-        link: '/',
-        github: '/',
-    },
-    {
-        image: '/work/1.png',
-        category: 'next js',
-        name: 'Ignite Website',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, non.',
-        link: '/',
-        github: '/',
-    },
-    {
-        image: '/work/3.png',
-        category: 'next js',
-        name: 'Envision Website',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, non.',
-        link: '/',
-        github: '/',
-    },
-    {
-        image: '/work/1.png',
-        category: 'next js',
-        name: 'Nova Website',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, non.',
-        link: '/',
-        github: '/',
-    },
-    {
-        image: '/work/4.png',
-        category: 'fullstack',
-        name: 'Zenith Website',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, non.',
-        link: '/',
-        github: '/',
-    },
-    {
-        image: '/work/2.png',
-        category: 'fullstack',
-        name: 'Nexa Website',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, non.',
-        link: '/',
-        github: '/',
-    },
-];
 
-// remove category duplicates
-const uniqueCategories = [
-    'all projects',
-    ...new Set(ProjectData.map(item => item.category)),
-];
+const Projects = async () => {
 
-const Projects = () => {
-    const [categories, setCategories] = useState(uniqueCategories);
-    const [category, setCategory] = useState('all projects')
-
-    const filteredProjects = ProjectData.filter(project => {
-        // if category is 'all projects' return all Projects, else filter by category
-
-        return category === 'all projects'
-        ? project
-        : project.category === category;
-    })
-
-    console.log(filteredProjects)
+    const {blogPosts, technologies} = await getPageData();
 
     return (
         <section className="min-h-screen pt-12">
             <div className="container mx-auto">
+                <p className='subtitle mb-8 !text-red-600 text-center'>This portfolio is under construction, checkout my Github <Link href="https://github.com/thiagosullivan" target='_blank' rel="noopener noreferrer" className='font-bold text-xl underline'>HERE</Link></p>
                 <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">My Projects</h2>
                 {/* tabs */}
 
-                <Tabs defaultValue={category} className="mb-24 xl:mb-48">
-                    <TabsList className="w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none">
-                        {categories.map((category, index) => {
-                            return (
-                                <TabsTrigger
-                                    onClick={() => setCategory(category)}
-                                    value={category}
-                                    key={index}
-                                    className="capitalize w-[162px] md:w-auto"
-                                >
-                                    {category}
-                                </TabsTrigger>
-                            )
-                        })}
-                    </TabsList>
-                    {/* tabs content */}
-                    <div className="text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
-                        {filteredProjects.map((project, index) => {
-                            return (
-                                <TabsContent value={category} key={index}>
-                                    <ProjectCard project={project} />
-                                </TabsContent>
-                            )
-                        })}
-                    </div>
-                </Tabs>
+                <ProjectTabs blogPosts={blogPosts} technologies={technologies}/>
             </div>
         </section>
     );

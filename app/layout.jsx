@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ReduxProvider } from "@/redux/provider";
+import { Toaster } from "sonner";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
             <Header />
             {children}
             <Footer />
+            <Toaster position="bottom-right" />
           </ReduxProvider>
         </ThemeProvider>
       </body>

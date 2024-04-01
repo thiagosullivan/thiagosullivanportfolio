@@ -82,7 +82,8 @@ const ProjectData = [
     },
 ];
 
-const Work = () => {
+const Work = ({blogPosts}) => {
+
     return (
         <section className='relative mb-12 xl:mb-48'>
             <div className='container mx-auto'>
@@ -90,6 +91,7 @@ const Work = () => {
                 <div className=' max-w-[400px] mx-auto xl:mx-0 text-center xl:text-left mb-12 xl:h-[400px] flex flex-col justify-center items-center xl:items-start'>
                     <h2 className='section-title mb-4'>Latest Projects</h2>
                     <p className='subtitle mb-8'>Check out some of my latest projects</p>
+                    <p className='subtitle mb-8 !text-red-600'>This portfolio is under construction, checkout my Github <Link href="https://github.com/thiagosullivan" target='_blank' rel="noopener noreferrer" className='font-bold text-xl underline'>HERE</Link></p>
                     <Link href="/projects"><Button>All Projects</Button></Link>
                 </div>
                 {/* slider */}
@@ -107,7 +109,14 @@ const Work = () => {
                         pagination={{clickable: true}}
                     >
                         {/* show only the firsdt 4 projects for the slides */}
-                        {ProjectData.slice(0, 4).map((project, index) => {
+                        {/* {ProjectData.slice(0, 4).map((project, index) => {
+                            return (
+                                <SwiperSlide key={index}>
+                                    <ProjectCard project={project} />
+                                </SwiperSlide>
+                            )
+                        })} */}
+                        {blogPosts.slice(0,3).map((project, index) => {
                             return (
                                 <SwiperSlide key={index}>
                                     <ProjectCard project={project} />

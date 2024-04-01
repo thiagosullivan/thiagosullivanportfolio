@@ -22,20 +22,21 @@ const Hero = ({languageChoice}) => {
                 <div className='flex justify-between gap-x-8'>
                     <div className='flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left'>
                         <div className='text-sm uppercase font-semibold mb-4 text-primary tracking-[4px]'>
-                            { languageChoice === "english"
+                            {/* { languageChoice === "english"
                                 ? 'Web Developer'
-                                : 'Desenvolvedor Web'}
+                                : 'Desenvolvedor Web'} */}
+                            Web Developer
                         </div>
                         <h1 className='h1 text-secondary'>
                             {languageChoice === "english" && 'Hello, my name is Thiago!'}
                             {languageChoice === "portuguese" && 'Olá, meu nome é Thiago!'}
+                            Hello, my name is Thiago!
                         </h1>
                         <p className='subtitle max-w-[490px] mx-auto xl:mx-0 mt-6'>
                             {languageChoice === "english" && 'But you can call me "Sullivan". Here you gonna find stuff related with my experiences and my best projects throughout my years working as a web development.'}
                             {languageChoice === "portuguese" && 'Mas pode me chamar de "Sullivan". Aqui você encontrará coisas relacionadas à minhas experiências e meus melhores projetos ao longo dos anos trabalhando como desenvolvedor web.'}
-                            
-                            
-                            </p>
+                            But you can call me "Sullivan". Here you gonna find stuff related with my experiences and my best projects throughout my years working as a web development.
+                        </p>
 
                         <div className='flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12'>
                             <Link href="/contact">
@@ -62,7 +63,7 @@ const Hero = ({languageChoice}) => {
                         {/* Badge 2 */}
                         <Badge
                             icon={<RiTodoFill />}
-                            endCountNum={12}
+                            endCountNum={32}
                             endCountText=""
                             badgeText="Finished Projects"
                             containerStyles="absolute top-[80%] -left-[1rem]"

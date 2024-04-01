@@ -379,7 +379,7 @@ const About = () => {
                                                             <TooltipProvider>
                                                                 <Tooltip>
                                                                     <TooltipTrigger>
-                                                                        <Link href={link} target="_blank" noopener noreferrer>
+                                                                        <Link href={link} target="_blank" rel="noopener noreferrer">
                                                                             <Image
                                                                                 src={imgPath}
                                                                                 width={48}
