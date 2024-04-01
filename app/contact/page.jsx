@@ -1,7 +1,14 @@
 import Form from "@/components/Form";
+// import { sendMail } from "@/lib/mail";
 import { HomeIcon, MailIcon, PhoneCall } from "lucide-react";
 
 const Contact = () => {
+
+    const send = async () => {
+        "use server"
+        await sendMail({to: "thiago.sullivan.dev@gmail.com", name: "Thiago", subject: "Test Mail", body:`<h1>Hello World</h1>`})
+    }
+    
     return (
         <section>
             <div className="container mx-auto">
@@ -19,7 +26,7 @@ const Contact = () => {
                     {/* illustration */}
                     <div className="hidden xl:flex w-full bg-contact_illustration_light dark:bg-contact_illustration_dark bg-contain bg-top bg-no-repeat">
                     </div>
-                </div>
+                </div>                
                 {/* info text & form */}
                 <div className="grid xl:grid-cols-2 mb-24 xl:mb-32">
                     {/* info text */}
@@ -39,9 +46,13 @@ const Contact = () => {
                             <PhoneCall size={18} className="text-primary" />
                             <div>+55 (43) 99848-1727</div>
                         </div>
-                        <Form />
+                        <Form send={send} />
                     </div>
                 </div>
+
+                {/* <form>
+                    <button formAction={send}>Enviar</button>
+                </form> */}
             </div>
         </section>
     );
