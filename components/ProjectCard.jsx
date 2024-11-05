@@ -10,8 +10,8 @@ const ProjectCard = ({project}) => {
     console.log(project, 'POST')
 
     return (
-        <Card className="group overflow-hidden relative">
-            <Link href={`/projects/${project.slug}`}>
+        <Card className="group overflow-hidden relative h-full">
+            <Link className='block' href={`/projects/${project.slug}`}>
             
                 <CardHeader className="p-0">
                     {/* image */}
