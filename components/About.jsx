@@ -8,7 +8,8 @@ import {
     PhoneCall, 
     GraduationCap, 
     Calendar, 
-    Briefcase
+    Briefcase,
+    Link2Icon
 } from 'lucide-react'
 import Link from "next/link";
 import {
@@ -82,22 +83,32 @@ const qualificationData = [
             {
                 company: 'BizCommerce',
                 role: 'Frontend Developer',
-                years: 'Jun 2019 - Feb 2020'
+                years: 'Jun 2019 - Feb 2020',
+                link: 'https://www.linkedin.com/company/bizcommerce'
             },
             {
                 company: 'Agência Guia-se Londrina',
                 role: 'Fullstack Developer',
-                years: 'Feb 2020 - Jul 2021'
+                years: 'Feb 2020 - Jul 2021',
+                link: 'https://www.linkedin.com/company/guiaseagenciadigital'
             },
             {
                 company: 'Compass UOL',
                 role: 'Frontend Developer',
-                years: 'Jul 2021 - May 2023'
+                years: 'Jul 2021 - May 2023',
+                link: 'https://www.linkedin.com/company/compass-uol'
             },
             {
                 company: 'Surto MKT',
                 role: 'Fullstack Developer',
-                years: 'Jan 2023 - Aug 2023'
+                years: 'Jan 2023 - Aug 2023',
+                link: 'https://www.linkedin.com/company/surtomkt/'
+            },
+            {
+                company: 'FidenTech',
+                role: 'Fullstack Developer',
+                years: 'Feb 2024 - Nov 2024',
+                link: 'https://www.linkedin.com/company/fidentech-solutions'
             },
         ]
     }
@@ -108,31 +119,34 @@ const skillData = [
         title: 'skills',
         data: [
             {
-                name: 'Responsive Design,',
+                name: '• Responsive Design,',
             },
             {
-                name: 'Optimization, accessibility and SEO,',
+                name: '• Optimization, accessibility and SEO,',
             },
             {
-                name: 'Experience with e-commerce,',
+                name: '• Experience with e-commerce,',
             },
             {
-                name: ' Teamwork and leadership',
+                name: '• Teamwork and leadership',
             },
             {
-                name: 'Hooks, Redux, ContextAPI,',
+                name: '• Hooks, Redux, ContextAPI,',
             },
             {
-                name: "Construction of landing pages, blogs, ecommerce, dashboards,"
+                name: '• Construction of landing pages, blogs, ecommerce, dashboards,'
             },
             {
-                name: "Rest API in NodeJS with Express"
+                name: '• Rest API in NodeJS with Express,'
             },
             {
-                name: "Database with MongoDB and PostgreSQL with Prisma and Supabase"
+                name: '• Database with MongoDB,'
             },
             {
-                name: "Experience creating projects from scratch to deploy"
+                name: '• PostgreSQL with Prisma and Supabase,'
+            },
+            {
+                name: '• Experience creating projects from scratch to deploy'
             },
         ]
     },
@@ -180,14 +194,24 @@ const skillData = [
                 name: 'MongoDB',
             },
             {
-                imgPath: '/about/docker.svg',
-                link: 'https://www.docker.com/',
-                name: 'Docker',
-            },
-            {
                 imgPath: '/about/postgresql.svg',
                 link: 'https://www.postgresql.org/',
                 name: 'PostgresQL',
+            },
+            {
+                imgPath: '/about/express-js.svg',
+                link: 'https://expressjs.com/',
+                name: 'Express JS',
+            },
+            {
+                imgPath: '/about/supabase.svg',
+                link: 'https://supabase.com/',
+                name: 'Supabase',
+            },
+            {
+                imgPath: '/about/docker.svg',
+                link: 'https://www.docker.com/',
+                name: 'Docker',
             },
             {
                 imgPath: '/about/eslint.svg',
@@ -306,7 +330,7 @@ const About = () => {
                                                     {getData(qualificationData, 'experience').title}
                                                 </h4>
                                             </div>
-                                            <div className="flex flex-col gap-y-8">
+                                            <div className="flex flex-col gap-y-4">
                                                 {getData(qualificationData, 'experience').data.map((item, index)=> {
                                                     const {company, role, years} = item;
                                                     return (
@@ -314,10 +338,15 @@ const About = () => {
                                                             <div className="h-[84px] w-[1px] bg-border relative ml-2">
                                                                 <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
                                                             </div>
-                                                            <div>
-                                                                <div className="font-semibold text-xl leading-none mb-2">{company}</div>
-                                                                <div className="text-lg leading-none text-muted-foreground">{role}</div>
-                                                                <div className="text-base font-medium">{years}</div>
+                                                            <div className="flex items-center max-w-[209px]">
+                                                                <div>
+                                                                    <div className="font-semibold text-xl leading-none mb-2">{company}</div>
+                                                                    <div className="text-lg leading-none text-muted-foreground">{role}</div>
+                                                                    <div className="text-base font-medium">{years}</div>
+                                                                </div>
+                                                                <div className="ml-6">
+                                                                    <Link href={item.link} className="transition ease-in-out delay-75 hover:text-primary"><Link2Icon /></Link>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     )
@@ -332,7 +361,7 @@ const About = () => {
                                                     {getData(qualificationData, 'education').title}
                                                 </h4>
                                             </div>
-                                            <div className="flex flex-col gap-y-8">
+                                            <div className="flex flex-col gap-y-4">
                                                 {getData(qualificationData, 'education').data.map((item, index)=> {
                                                     const {university, qualification, years} = item;
                                                     return (
@@ -361,11 +390,11 @@ const About = () => {
                                             <h4 className="text-xl font-semibold mb-2">Skills</h4>
                                             <div className="border-b border-border mb-4"></div>
                                             {/* skill list */}
-                                            <div className="grid grid-cols-2">
+                                            <div className="ml-4 gridd grid-cols-2">
                                                 {getData(skillData, 'skills').data.map((item, index) => {
                                                     const {name} = item;
                                                     return (
-                                                        <div className="text-center xl:text-lest mx-auto xl:mx-0 " key={index}>
+                                                        <div className="text-left xl:text-lest mx-auto xl:mx-0 " key={index}>
                                                             <div className="font-medium">{name}</div>
                                                         </div>
                                                     )
@@ -377,7 +406,7 @@ const About = () => {
                                             <h4 className="text-xl font-semibold mb-2 xl:text-left">Tools</h4>
                                             <div className="border-b border-border mb-4"></div>
                                             {/* tools list */}
-                                            <div className="flex flex-wrap gap-4 justify-center xl:justify-start">
+                                            <div className="flex flex-wrap gap-2 justify-center xl:justify-start">
                                                 {getData(skillData, 'tools').data.map((item, index)=> {
                                                     const {imgPath, link, name} = item;
                                                     return (
