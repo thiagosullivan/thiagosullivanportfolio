@@ -71,7 +71,7 @@ const qualificationData = [
             {
                 university: 'UNIFIL',
                 qualification: 'Software Engineer',
-                years: '2023 - 2027'
+                years: '2021 - 2025'
             }
 
         ]
@@ -124,6 +124,12 @@ const skillData = [
             },
             {
                 name: "Construction of landing pages, blogs, ecommerce, dashboards,"
+            },
+            {
+                name: "Rest API in NodeJS with Express"
+            },
+            {
+                name: "Database with MongoDB and PostgreSQL with Prisma and Supabase"
             },
             {
                 name: "Experience creating projects from scratch to deploy"
@@ -263,7 +269,7 @@ const About = () => {
                                 {/* personal */}
                                 <TabsContent value="personal">
                                     <div className="text-center xl:text-left">
-                                        <h3 className="h3 mb-4">Deliverying Quality projects for over 4 Years</h3>
+                                        <h3 className="h3 mb-4">Deliverying Quality projects for over 5 Years</h3>
                                         <p className="subtitle max-w-xl mx-auto xl:mx-0">I specialize in crafting intuitive and responsive websites, phone apps, and database with cutting-edge technology, delivering dynamic and engaging user experience.</p>
                                         {/* icons */}
                                         <div className="grid xl:grid-cols-2 gap-4 mb-12">
@@ -280,7 +286,7 @@ const About = () => {
                                         <div className="flex flex-col gap-y-2">
                                             <div className="text-primary">Language Skill</div>
                                             <div className="border-b border-border"></div>
-                                            <div>English (B2), Portuguese (Native)</div>
+                                            <div><strong>English</strong> (B2), <strong>Portuguese</strong> (Native), <strong>Spanish</strong> (Basic).</div>
                                         </div>
                                     </div>
                                 </TabsContent>
