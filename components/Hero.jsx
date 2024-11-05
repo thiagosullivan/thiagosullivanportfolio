@@ -42,7 +42,7 @@ const Hero = ({languageChoice}) => {
                             <Link href="/contact">
                                 <Button className="gap-x-2">Contact me <Send size={18} /></Button>
                             </Link>
-                            <a href="/CV-ENG.pdf" download="thiago-cv-eng">
+                            <a href="/thiago-cv-eng.pdf" download="thiago-cv-eng">
                                 <Button variant="secondary" className="gap-x-2">Download CV <Download size={18} /></Button>
                             </a>
                         </div>
