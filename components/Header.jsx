@@ -12,23 +12,13 @@ import Image from "next/image";
 
 import BraFlag from "../public/brazil-flag.jpg";
 import UsaFlag from "../public/usa-flag.jpg";
+import { useLanguage } from "@/app/context/LanguageContext";
 
-import { changeLanguage } from "@/redux/features/language";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@/redux/store";
-
-const Header = ({ language }) => {
+const Header = () => {
   const [header, setHeader] = useState(false);
   const [englishChoice, setEnglishChoice] = useState("english");
   const pathname = usePathname();
-
-  const dispatch = useDispatch();
-  // console.log(englishChoice, "IDIOMA SELECIONADO")
-
-  useEffect(() => {
-    dispatch(changeLanguage(englishChoice));
-    // console.log("USE EFFECT", englishChoice)
-  }, [englishChoice]);
+  const { language, setEnglish, setPortuguese } = useLanguage();
 
   useEffect(() => {
     const scrollYPos = window.addEventListener("scroll", () => {
@@ -57,21 +47,17 @@ const Header = ({ language }) => {
                 containerStyles={"hidden xl:flex gap-x-8 items-center"}
                 linkStyles="relative hover:text-primary transition-all"
                 underlineStyles="absolute left-0 top-full h-[2px] bg-primary w-full"
-                englishChoice={englishChoice}
+                // englishChoice={englishChoice}
               />
               <ThemeToggle />
               {/* Mobile Nav */}
               <div className="flex flex-col items-center">
-                {englishChoice === "english" ? (
-                  <p>Language:</p>
-                ) : (
-                  <p>Idioma:</p>
-                )}
+                {language === "en" ? <p>Language:</p> : <p>Idioma:</p>}
                 <div className="flex gap-x-1 mt-1">
                   <Button
                     className="border-none bg-transparent w-[30px] h-[18px] min-w-0 p-0 relative cursor-pointer"
                     value="portuguese"
-                    onClick={() => setEnglishChoice("portuguese")}
+                    onClick={setPortuguese}
                   >
                     <Image
                       src={BraFlag}
@@ -83,7 +69,7 @@ const Header = ({ language }) => {
                   <Button
                     className="border-none bg-transparent w-[30px] h-[18px] min-w-0 p-0 relative cursor-pointer"
                     value="english"
-                    onClick={() => setEnglishChoice("english")}
+                    onClick={setEnglish}
                   >
                     <Image
                       src={UsaFlag}
