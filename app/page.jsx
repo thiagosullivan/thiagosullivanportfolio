@@ -22,7 +22,6 @@ const getPageData = async () => {
           postText {
             raw
           }
-          description
           imagePost {
             url
           }
@@ -31,27 +30,29 @@ const getPageData = async () => {
           projectImages {
             id
             url
-          }
+          }          
           technology {
             technologyName
-          }    
+          }
+          link
+          repo
         }
       technologies {
           technologyName
       }
     }
-  `
+  `;
 
-  return fetchHygraphQuery(query)
-}
+  return fetchHygraphQuery(query);
+};
 
 export default async function Home() {
   // const languageChoice = useAppSelector((state) => state.languageReducer.value.languageName);
 
   // console.log(languageChoice, "LANGUAGE CHOICE")
 
-  const {blogPosts} = await getPageData();
-  console.log(blogPosts, 'HOME')
+  const { blogPosts } = await getPageData();
+  console.log(blogPosts, "HOME");
 
   return (
     <main>
