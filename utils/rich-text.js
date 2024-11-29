@@ -1,5 +1,5 @@
-import { RichText as CMSRichText } from '@graphcms/rich-text-react-renderer'
-import { ComponentProps } from 'react'
+import { RichText as CMSRichText } from "@graphcms/rich-text-react-renderer";
+import { ComponentProps } from "react";
 
 export const RichText = ({ ...props }) => {
   return (
@@ -14,16 +14,8 @@ export const RichText = ({ ...props }) => {
             {children}
           </ul>
         ),
-        li: ({ children }) => (
-          <li className='list'>
-            {children}
-          </li>
-        ),
-        p: ({ children }) => (
-          <p className='text-justify'>
-            {children}
-          </p>
-        ),
+        li: ({ children }) => <li className="list">{children}</li>,
+        p: ({ children }) => <p className="text-justify mb-2">{children}</p>,
         a: ({ children, ...props }) => (
           <a
             {...props}
@@ -34,5 +26,5 @@ export const RichText = ({ ...props }) => {
         ),
       }}
     />
-  )
-}
+  );
+};
