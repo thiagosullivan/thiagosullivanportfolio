@@ -11,22 +11,27 @@ const getPageData = async () => {
             slug
             tec
             postText {
+                raw
+            }
+            postTextPt {
               raw
             }
             imagePost {
-              url
+                url
             }
             resume
+            resumo
             title
+            titulo
             projectImages {
-              id
-              url
+                id
+                url
             }
             technology {
-              technologyName
+                technologyName
             }
-            link
-            repo
+          link
+          repo
           }
         technologies {
             technologyName
@@ -49,9 +54,9 @@ const Projects = async () => {
             href="https://github.com/thiagosullivan"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-xl underline"
+            className="font-bold text-xl underline uppercase"
           >
-            HERE
+            Here
           </Link>
         </p>
         <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">

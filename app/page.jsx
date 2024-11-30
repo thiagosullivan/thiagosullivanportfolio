@@ -17,22 +17,27 @@ const getPageData = async () => {
           slug
           tec
           postText {
+              raw
+          }
+          postTextPt {
             raw
           }
           imagePost {
-            url
+              url
           }
           resume
+          resumo
           title
+          titulo
           projectImages {
-            id
-            url
-          }          
-          technology {
-            technologyName
+              id
+              url
           }
-          link
-          repo
+          technology {
+              technologyName
+          }
+        link
+        repo
         }
       technologies {
           technologyName
