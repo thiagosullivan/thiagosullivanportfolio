@@ -1,6 +1,6 @@
 import { fetchHygraphQuery } from "@/utils/fetch-hygraph-query";
 import ProjectTabs from "./component/projects-tab";
-import Link from "next/link";
+import { ProjectContainerContext } from "./component/ProjectContainerContext";
 
 const getPageData = async () => {
   const query = `
@@ -48,20 +48,7 @@ const Projects = async () => {
   return (
     <section className="min-h-screen pt-12">
       <div className="container mx-auto">
-        <p className="subtitle mb-8 !text-red-600 text-center">
-          This portfolio is under construction, checkout my Github{" "}
-          <Link
-            href="https://github.com/thiagosullivan"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold text-xl underline uppercase"
-          >
-            Here
-          </Link>
-        </p>
-        <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
-          My Projects
-        </h2>
+        <ProjectContainerContext />
         {/* tabs */}
 
         <ProjectTabs blogPosts={blogPosts} technologies={technologies} />

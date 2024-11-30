@@ -1,27 +1,28 @@
-import Link from "next/link";
+import { useLanguage } from "@/app/context/LanguageContext";
 import Image from "next/image";
-import { Card, CardHeader } from "./ui/card";
-import { Link2Icon, GithubIcon, Link2 } from "lucide-react";
+import Link from "next/link";
 import { Badge } from "./ui/badge";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { Card, CardHeader } from "./ui/card";
 
 const ProjectCard = ({ project }) => {
+  const { language } = useLanguage();
+
   console.log(project, "POST");
 
   return (
-    <Card className="group overflow-hidden relative h-full">
+    <Card className="group overflow-hidden relative h-[100%]">
       <Link className="block" href={`/projects/${project.slug}`}>
         <CardHeader className="p-0">
           {/* image */}
-          <div className="relative w-full h-[300px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:bg-[110%] xl:bg-no-repeat overflow-hidden">
-            <div className="w-[70%] h-[250px] relative">
+          <div className="relative w-full h-[260px] flex items-center justify-center bg-tertiary dark:bg-secondary/40 xl:bg-work_project_bg_light xl:bg-[110%] xl:bg-no-repeat overflow-hidden">
+            <div className="w-[70%] h-[225px] relative">
               <Image
-                className="absolute bottom-0 shadow-2xl h-[250px] rounded-2xl"
+                className="absolute bottom-0 shadow-2xl h-[225px] rounded-2xl"
                 src={project.imagePost.url}
-                alt={project.title}
+                alt={language == "en" ? `project.title` : `project.titulo`}
                 fill
                 style={{
-                  objectFit: "cover",
+                  objectFit: "contain",
                 }}
               />
             </div>
@@ -46,25 +47,40 @@ const ProjectCard = ({ project }) => {
         </CardHeader>
         <div className="h-full px-6 py-4">
           <div className="absolute top-4 left-5 mb-2">
-            {/* {project.map((tec, index) => {
-                            return (
-                                
-                                )
-                            })} */}
             <Badge className="uppercase text-sm font-medium mr-2">
               {project.tec}
             </Badge>
           </div>
 
-          <h4 className="h4 mb-1">
-            {project.title.length > 35
-              ? project.title.substr(0, 35) + "..."
-              : project.title}
+          <h4 className="h4 mb-2">
+            {language == "en" ? (
+              <>
+                {project.title.length > 35
+                  ? project.title.substr(0, 35) + "..."
+                  : project.title}
+              </>
+            ) : (
+              <>
+                {project.titulo.length > 35
+                  ? project.titulo.substr(0, 35) + "..."
+                  : project.titulo}
+              </>
+            )}
           </h4>
           <p className="text-muted-foreground text-lg">
-            {project.resume.length > 100
-              ? project.resume.substr(0, 100) + "..."
-              : project.resume}
+            {language == "en" ? (
+              <>
+                {project.resume.length > 100
+                  ? project.resume.substr(0, 100) + "..."
+                  : project.resume}
+              </>
+            ) : (
+              <>
+                {project.resumo.length > 100
+                  ? project.resumo.substr(0, 100) + "..."
+                  : project.resumo}
+              </>
+            )}
           </p>
         </div>
       </Link>

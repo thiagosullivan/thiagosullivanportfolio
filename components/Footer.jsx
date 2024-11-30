@@ -1,8 +1,11 @@
+"use client";
+
+import { useLanguage } from "@/app/context/LanguageContext";
 import Socials from "./Socials";
 
 const Footer = () => {
+  const { language } = useLanguage();
   const currentTime = new Date();
-
   const year = currentTime.getFullYear();
 
   return (
@@ -16,8 +19,17 @@ const Footer = () => {
           />
           {/* copyright */}
           <div className="text-white">
-            Developed by Thiago "Sullivan" Santos | Copyright &copy; {year}. All
-            rights reserved.
+            {language == "en" ? (
+              <p>
+                Developed by Thiago "Sullivan" Santos | Copyright &copy; {year}.
+                All rights reserved.
+              </p>
+            ) : (
+              <p>
+                Desenvolvido por Thiago "Sullivan" Santos | Copyright &copy;{" "}
+                {year}. Todos os direitos reservados.
+              </p>
+            )}
           </div>
         </div>
       </div>
