@@ -89,7 +89,7 @@ const qualificationData = [
     title: "education",
     data: [
       {
-        university: "Bachalor in Product Design",
+        university: "UNOPAR - Universidade Norte do Paraná",
         qualification: "Bachalor in Product Design",
         years: "2013 - 2017",
       },
@@ -104,9 +104,14 @@ const qualificationData = [
         years: "2020 - 2022",
       },
       {
+        university: "Fullstack Club",
+        qualification: "Fullstack Development",
+        years: "2023 - 2025",
+      },
+      {
         university: "UNIFIL - Universidade Filadélfia",
         qualification: "Software Engineer",
-        years: "2021 - 2025",
+        years: "2024 - 2028",
       },
     ],
   },
@@ -134,13 +139,19 @@ const qualificationData = [
       {
         company: "Surto MKT",
         role: "Fullstack Developer",
-        years: "Jan 2023 - Aug 2023",
+        years: "Jan 2023 - Dec 2023",
         link: "https://www.linkedin.com/company/surtomkt/",
       },
       {
         company: "FidenTech",
         role: "Fullstack Developer",
-        years: "Feb 2024 - Nov 2024",
+        years: "Mar 2024 - Jan 2025",
+        link: "https://www.linkedin.com/company/fidentech-solutions",
+      },
+      {
+        company: "ATS Web Solutions",
+        role: "Fullstack Developer",
+        years: "Jun 2024 - Jul 2025",
         link: "https://www.linkedin.com/company/fidentech-solutions",
       },
     ],
@@ -167,9 +178,14 @@ const qualificationDataPt = [
         years: "2020 - 2022",
       },
       {
+        university: "Fullstack Club",
+        qualification: "Desenvolvedor Fullstack",
+        years: "2023 - 2025",
+      },
+      {
         university: "UNIFIL - Universidade Filadélfia",
         qualification: "Engenharia de Software",
-        years: "2021 - 2025",
+        years: "2024 - 2028",
       },
     ],
   },
@@ -197,13 +213,19 @@ const qualificationDataPt = [
       {
         company: "Surto MKT",
         role: "Desenvolvedor Fullstack",
-        years: "Jan 2023 - Ago 2023",
+        years: "Jan 2023 - Dez 2023",
         link: "https://www.linkedin.com/company/surtomkt/",
       },
       {
         company: "FidenTech",
         role: "Desenvolvedor Fullstack",
-        years: "Fev 2024 - Nov 2024",
+        years: "Mar 2024 - Jan 2025",
+        link: "https://www.linkedin.com/company/fidentech-solutions",
+      },
+      {
+        company: "ATS Web Solutions",
+        role: "Desenvolvedor Fullstack",
+        years: "Jun 2024 - Jul 2025",
         link: "https://www.linkedin.com/company/fidentech-solutions",
       },
     ],
@@ -215,34 +237,53 @@ const skillData = [
     title: "skills",
     data: [
       {
-        name: "• Responsive Design,",
+        name: [
+          '• Frontend:',
+          <br key="break" />,
+          'React, Next.js, Redux, KnockoutJS, Bootstrap, TailwindCSS, Styled-Components, Shadcn, Material UI, Vite,'
+        ],
       },
       {
-        name: "• Optimization, accessibility and SEO,",
+        name: [
+          '• Backend:',
+          <br key="break" />,
+          'Node.js (Express), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB'
+        ]
       },
       {
-        name: "• Experience with e-commerce,",
+        name: [
+          '• Authentication & Security:',
+          <br key="break" />,
+          'JWT (JSON Web Tokens), OAuth 2.0, Session Management, bcrypt, NextAuth, Auth0, Better Auth,'
+        ]
       },
       {
-        name: "• Teamwork and leadership",
+        name: [
+          '• Mobile:',
+          <br key="break" />,
+          'React Native,'
+        ]
       },
       {
-        name: "• Hooks, Redux, ContextAPI,",
+        name: [
+          '• DevOps:',
+          <br key="break" />,
+          'AWS, Vercel, Heroku, Netlify, CI/CD,'
+        ]
       },
       {
-        name: "• Construction of landing pages, blogs, ecommerce, dashboards,",
+        name: [
+          '• Tools:',
+          <br key="break" />,
+          'NJira, Git, Figma, Adobe XD, Photoshop,'
+        ]
       },
       {
-        name: "• Rest API in NodeJS with Express,",
-      },
-      {
-        name: "• Database with MongoDB,",
-      },
-      {
-        name: "• PostgreSQL with Prisma and Supabase,",
-      },
-      {
-        name: "• Experience creating projects from scratch to deploy",
+        name: [
+          '• Others:',
+          <br key="break" />,
+          'SEO, PWA, GraphQL, Docker.'
+        ]
       },
     ],
   },
@@ -363,34 +404,53 @@ const skillDataPt = [
     title: "skills",
     data: [
       {
-        name: "• Design Responsivo,",
+        name: [
+          '• Frontend:',
+          <br key="break" />,
+          'React, Next.js, Redux, KnockoutJS, Bootstrap, TailwindCSS, Styled-Components, Shadcn, Material UI, Vite,'
+        ],
       },
       {
-        name: "• Optimização, acessibilidade e SEO,",
+        name: [
+          '• Backend:',
+          <br key="break" />,
+          'Node.js (Express), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB'
+        ]
       },
       {
-        name: "• Experiência com e-commerce,",
+        name: [
+          '• Autenticação e Segurança:',
+          <br key="break" />,
+          'JWT (JSON Web Tokens), OAuth 2.0, Session Management, bcrypt, NextAuth, Auth0, Better Auth,'
+        ]
       },
       {
-        name: "• Trabalho em equipe e liderança",
+        name: [
+          '• Mobile:',
+          <br key="break" />,
+          'React Native,'
+        ]
       },
       {
-        name: "• Hooks, Redux, ContextAPI,",
+        name: [
+          '• DevOps:',
+          <br key="break" />,
+          'AWS, Vercel, Heroku, Netlify, CI/CD,'
+        ]
       },
       {
-        name: "• Construção de landing pages, blogs, e-commerces, dashboards,",
+        name: [
+          '• Ferramentas:',
+          <br key="break" />,
+          'NJira, Git, Figma, Adobe XD, Photoshop,'
+        ]
       },
       {
-        name: "• Rest API em NodeJS com Express/Nest,",
-      },
-      {
-        name: "• Banco de dados com MongoDB,",
-      },
-      {
-        name: "• PostgreSQL com Prisma e Supabase,",
-      },
-      {
-        name: "• Experiência criando projetos do 0 até a publicação",
+        name: [
+          '• Outros:',
+          <br key="break" />,
+          'SEO, PWA, GraphQL, Docker.'
+        ]
       },
     ],
   },
@@ -551,8 +611,8 @@ const About = () => {
                   <div className="text-center xl:text-left">
                     <h3 className="h3 mb-4">
                       {language == "en"
-                        ? "Deliverying Quality projects for over 5 Years"
-                        : "Entregando projetos de qualidades há mais de 5 anos"}
+                        ? "Deliverying Quality projects for over 6 Years"
+                        : "Entregando projetos de qualidades há mais de 6 anos"}
                     </h3>
                     <p className="subtitle max-w-xl mx-auto xl:mx-0">
                       {language == "en"

@@ -71,7 +71,7 @@ const Hero = () => {
             {/* Badge 1 */}
             <Badge
               icon={<RiBriefcase4Fill />}
-              endCountNum={5}
+              endCountNum={6}
               badgeText={
                 language === "en"
                   ? "Years of Experience"
@@ -82,8 +82,8 @@ const Hero = () => {
             {/* Badge 2 */}
             <Badge
               icon={<RiTodoFill />}
-              endCountNum={32}
-              endCountText=""
+              endCountNum={20}
+              endCountText="+"
               badgeText={
                 language === "en" ? "Finished Projects" : "Projetos Finalizados"
               }
@@ -92,8 +92,8 @@ const Hero = () => {
             {/* Badge 3 */}
             <Badge
               icon={<RiTeamFill />}
-              endCountNum={19}
-              endCountText=""
+              endCountNum={20}
+              endCountText="+"
               badgeText={
                 language === "en" ? "Happy Clients" : "Clientes Satisfeitos"
               }
