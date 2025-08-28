@@ -275,7 +275,7 @@ const skillData = [
         name: [
           '• Tools:',
           <br key="break" />,
-          'NJira, Git, Figma, Adobe XD, Photoshop,'
+          'Jira, Git, Figma, Adobe XD, Photoshop,'
         ]
       },
       {
@@ -442,7 +442,7 @@ const skillDataPt = [
         name: [
           '• Ferramentas:',
           <br key="break" />,
-          'NJira, Git, Figma, Adobe XD, Photoshop,'
+          'Jira, Git, Figma, Adobe XD, Photoshop,'
         ]
       },
       {
