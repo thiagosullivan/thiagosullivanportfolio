@@ -151,7 +151,7 @@ const qualificationData = [
       {
         company: "ATS Web Solutions",
         role: "Fullstack Developer",
-        years: "Jun 2024 - Jul 2025",
+        years: "Jun 2024 - Sep 2025",
         link: "https://www.linkedin.com/company/fidentech-solutions",
       },
     ],
@@ -225,7 +225,7 @@ const qualificationDataPt = [
       {
         company: "ATS Web Solutions",
         role: "Desenvolvedor Fullstack",
-        years: "Jun 2024 - Jul 2025",
+        years: "Jun 2024 - Set 2025",
         link: "https://www.linkedin.com/company/fidentech-solutions",
       },
     ],
@@ -238,52 +238,66 @@ const skillData = [
     data: [
       {
         name: [
-          '• Frontend:',
-          <br key="break" />,
-          'React, Next.js, Redux, KnockoutJS, Bootstrap, TailwindCSS, Styled-Components, Shadcn, Material UI, Vite,'
+          <div className="font-black">• Frontend:</div>,
+          " React, Next.js, KnockoutJS, Bootstrap, TailwindCSS, Styled-Components, Shadcn, Material UI, Vite.",
+          <div className="mb-5" />,
         ],
       },
       {
         name: [
-          '• Backend:',
-          <br key="break" />,
-          'Node.js (Express), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB'
-        ]
+          <div className="font-black">• Context/States:</div>,
+          " Redux, Zustand, React Query (TanStack Query). ",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• Authentication & Security:',
-          <br key="break" />,
-          'JWT (JSON Web Tokens), OAuth 2.0, Session Management, bcrypt, NextAuth, Auth0, Better Auth,'
-        ]
+          <div className="font-black">• Backend:</div>,
+          "Node.js (Express, Fastify), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB.",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• Mobile:',
-          <br key="break" />,
-          'React Native,'
-        ]
+          <div className="font-black">• Authentication & Security:</div>,
+          "JWT (JSON Web Tokens), OAuth 2.0, Session Management, bcrypt, NextAuth, Auth0, Better Auth.",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• DevOps:',
-          <br key="break" />,
-          'AWS, Vercel, Heroku, Netlify, CI/CD,'
-        ]
+          <div className="font-black">• Mobile:</div>,
+          "React Native.",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• Tools:',
-          <br key="break" />,
-          'Jira, Git, Figma, Adobe XD, Photoshop,'
-        ]
+          <div className="font-black">• DevOps:</div>,
+          "AWS, Vercel, Heroku, Netlify, CI/CD.",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• Others:',
-          <br key="break" />,
-          'SEO, PWA, GraphQL, Docker.'
-        ]
+          <div className="font-black">• Tools:</div>,
+          "Jira, Git, Figma, Adobe XD, Photoshop, Illustrator.",
+          <div className="mb-5" />,
+        ],
+      },
+      {
+        name: [
+          <div className="font-black">• AI:</div>,
+          "ChatGPT, Google Gemini, DeepSeek.",
+          <div className="mb-5" />,
+        ],
+      },
+      {
+        name: [
+          <div className="font-black">• Others:</div>,
+          "SEO, PWA, GraphQL, Docker.",
+          <div className="mb-5" />,
+        ],
       },
     ],
   },
@@ -405,52 +419,66 @@ const skillDataPt = [
     data: [
       {
         name: [
-          '• Frontend:',
-          <br key="break" />,
-          'React, Next.js, Redux, KnockoutJS, Bootstrap, TailwindCSS, Styled-Components, Shadcn, Material UI, Vite,'
+          <div className="font-black">• Frontend:</div>,
+          "React, Next.js, KnockoutJS, Bootstrap, TailwindCSS, Styled-Components, Shadcn, Material UI, Vite,",
+          <div className="mb-5" />,
         ],
       },
       {
         name: [
-          '• Backend:',
-          <br key="break" />,
-          'Node.js (Express), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB'
-        ]
+          <div className="font-black">• Contexto/Estados:</div>,
+          " Redux, Zustand, React Query (TanStack Query).",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• Autenticação e Segurança:',
-          <br key="break" />,
-          'JWT (JSON Web Tokens), OAuth 2.0, Session Management, bcrypt, NextAuth, Auth0, Better Auth,'
-        ]
+          <div className="font-black">• Backend:</div>,
+          "Node.js (Express, Fastify), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB.",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• Mobile:',
-          <br key="break" />,
-          'React Native,'
-        ]
+          <div className="font-black">• Autenticação e Segurança:</div>,
+          "JWT (JSON Web Tokens), OAuth 2.0, Session Management, bcrypt, NextAuth, Auth0, Better Auth.",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• DevOps:',
-          <br key="break" />,
-          'AWS, Vercel, Heroku, Netlify, CI/CD,'
-        ]
+          <div className="font-black">• Mobile:</div>,
+          "React Native.",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• Ferramentas:',
-          <br key="break" />,
-          'Jira, Git, Figma, Adobe XD, Photoshop,'
-        ]
+          <div className="font-black">• DevOps:</div>,
+          "AWS, Vercel, Heroku, Netlify, CI/CD.",
+          <div className="mb-5" />,
+        ],
       },
       {
         name: [
-          '• Outros:',
-          <br key="break" />,
-          'SEO, PWA, GraphQL, Docker.'
-        ]
+          <div className="font-black">• Ferramentas:</div>,
+          "Jira, Git, Figma, Adobe XD, Photoshop, Illustrator.",
+          <div className="mb-5" />,
+        ],
+      },
+      {
+        name: [
+          <div className="font-black">• AI:</div>,
+          "ChatGPT, Google Gemini, DeepSeek.",
+          <div className="mb-5" />,
+        ],
+      },
+      {
+        name: [
+          <div className="font-black">• Outros:</div>,
+          "SEO, PWA, GraphQL, Docker.",
+          <div className="mb-5" />,
+        ],
       },
     ],
   },
@@ -611,8 +639,8 @@ const About = () => {
                   <div className="text-center xl:text-left">
                     <h3 className="h3 mb-4">
                       {language == "en"
-                        ? "Deliverying Quality projects for over 6 Years"
-                        : "Entregando projetos de qualidades há mais de 6 anos"}
+                        ? "Deliverying Quality projects for over 5 Years"
+                        : "Entregando projetos de qualidades há mais de 5 anos"}
                     </h3>
                     <p className="subtitle max-w-xl mx-auto xl:mx-0">
                       {language == "en"

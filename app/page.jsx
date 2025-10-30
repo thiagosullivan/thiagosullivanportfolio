@@ -11,7 +11,7 @@ import { fetchHygraphQuery } from "@/utils/fetch-hygraph-query";
 const getPageData = async () => {
   const query = `
     query blogPosts {
-      blogPosts {
+      blogPosts(orderBy: updatedAt_DESC) {
           createdAt
           id
           slug
@@ -50,7 +50,7 @@ const getPageData = async () => {
 
 export default async function Home() {
   const { blogPosts } = await getPageData();
-  console.log(blogPosts, "HOME");
+  // console.log(blogPosts, "HOME");
 
   return (
     <main>

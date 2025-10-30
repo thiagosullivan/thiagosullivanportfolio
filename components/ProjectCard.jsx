@@ -7,7 +7,7 @@ import { Card, CardHeader } from "./ui/card";
 const ProjectCard = ({ project }) => {
   const { language } = useLanguage();
 
-  console.log(project, "POST");
+  // console.log(project, "POST");
 
   return (
     <Card className="group overflow-hidden relative h-[100%]">

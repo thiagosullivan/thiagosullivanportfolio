@@ -5,7 +5,7 @@ import React from "react";
 
 export function LanguageContainer({ children }) {
   const { language } = useLanguage();
-  console.log(language, "LANGUAGE 1");
+  // console.log(language, "LANGUAGE 1");
 
   // Injeta o idioma como prop para todos os filhos
   return (

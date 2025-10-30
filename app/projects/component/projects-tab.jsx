@@ -95,7 +95,7 @@ const ProjectTabs = ({ blogPosts, technologies }) => {
   const [category, setCategory] = useState("all projects");
   const [selectedFilter, setSelectedFilter] = useState([]);
 
-  console.log(category, "SINGLE");
+  // console.log(category, "SINGLE");
   // console.log(categories, 'PLURAL')
   console.log(blogPosts, "TODOS OS POSTS");
 
@@ -111,7 +111,7 @@ const ProjectTabs = ({ blogPosts, technologies }) => {
     return item.technologies;
   });
 
-  console.log(tecs, "TECS");
+  // console.log(tecs, "TECS");
 
   const filteredProjects = blogPosts.filter((project) => {
     // if category is 'all projects' return all Projects, else filter by category

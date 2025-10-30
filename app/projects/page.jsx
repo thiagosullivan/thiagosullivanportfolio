@@ -5,7 +5,7 @@ import { ProjectContainerContext } from "./component/ProjectContainerContext";
 const getPageData = async () => {
   const query = `
       query blogPosts {
-        blogPosts(orderBy: createdAt_DESC) {
+        blogPosts(orderBy: updatedAt_DESC) {
             createdAt
             id
             slug

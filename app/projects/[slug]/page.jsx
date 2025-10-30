@@ -55,7 +55,7 @@ const getPageData = async (slug) => {
 const PageProject = async ({ params: { slug } }) => {
   const { blogPosts } = await getPageData(slug);
 
-  console.log(blogPosts, "PROJ PAGE IND");
+  // console.log(blogPosts, "PROJ PAGE IND");
 
   return (
     <div className="min-h-screen pt-12">

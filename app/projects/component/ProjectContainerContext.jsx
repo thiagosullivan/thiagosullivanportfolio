@@ -7,7 +7,7 @@ export function ProjectContainerContext() {
   const { language } = useLanguage();
   return (
     <>
-      <p className="subtitle mb-8 !text-red-600 text-center">
+      {/* <p className="subtitle mb-8 !text-red-600 text-center">
         {language == "en"
           ? "This portfolio is under construction, checkout my Github"
           : "Esse portfólio está em construção, dá uma olhada no meu Github"}{" "}
@@ -19,7 +19,7 @@ export function ProjectContainerContext() {
         >
           {language == "en" ? "Here" : "Aqui"}
         </Link>
-      </p>
+      </p> */}
       <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
         {language == "en" ? "My Projects" : "Meus Projetos"}
       </h2>

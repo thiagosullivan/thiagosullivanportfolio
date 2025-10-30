@@ -77,7 +77,7 @@ const Hero = () => {
                   ? "Years of Experience"
                   : "Anos de experiência"
               }
-              containerStyles="absolute top=[24%] -left-[5rem]"
+              containerStyles="absolute top-[24%] -left-[3rem]"
             />
             {/* Badge 2 */}
             <Badge

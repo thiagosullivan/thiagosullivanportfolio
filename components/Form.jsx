@@ -20,13 +20,13 @@ const Form = ({ language }) => {
 
   const [loading, setLoading] = useState(false);
 
-  console.log(userName, "USERNAME");
-  console.log(email, "MAIL");
-  console.log(message, "MESSAGE");
+  // console.log(userName, "USERNAME");
+  // console.log(email, "MAIL");
+  // console.log(message, "MESSAGE");
 
   const sendEmail = async (e) => {
     e.preventDefault();
-    console.log("CLICKADO");
+    // console.log("CLICKADO");
 
     try {
       setLoading(true);
@@ -38,8 +38,8 @@ const Form = ({ language }) => {
           message,
         }),
       });
-      console.log("TRY");
-      console.log(await response.json());
+      // console.log("TRY");
+      // console.log(await response.json());
 
       setUserName("");
       setEmail("");
@@ -53,7 +53,7 @@ const Form = ({ language }) => {
         }`
       );
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error(
         `${
           language == "en"
@@ -63,7 +63,7 @@ const Form = ({ language }) => {
       );
     } finally {
       setLoading(false);
-      console.log("FINALLY");
+      // console.log("FINALLY");
     }
   };
 

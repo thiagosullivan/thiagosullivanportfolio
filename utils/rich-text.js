@@ -24,6 +24,9 @@ export const RichText = ({ ...props }) => {
             {children}
           </a>
         ),
+        h4: ({ children }) => (
+          <h4 className="font-bold mt-6 mb-2">{children}</h4>
+        ),
       }}
     />
   );

@@ -107,7 +107,7 @@ const Work = ({ blogPosts }) => {
               ? "Check out some of my projects that I've developed over the years."
               : "Confira alguns dos trabalhos que desenvolvi ao longo dos anos."}
           </p>
-          <p className="subtitle mb-8 !text-red-600">
+          {/* <p className="subtitle mb-8 !text-red-600">
             {language == "en"
               ? "This portfolio is under construction, checkout all my works on Github"
               : "Este portfólio está em construção, você pode conferir todos os meus trabalho no Github"}{" "}
@@ -119,7 +119,7 @@ const Work = ({ blogPosts }) => {
             >
               {language == "en" ? "here" : "aqui"}
             </Link>
-          </p>
+          </p> */}
           {language == "en" ? (
             <Link href="/projects">
               <Button>All Projects</Button>
