@@ -39,7 +39,11 @@ const getPageData = async () => {
       }
     `;
 
-  return fetchHygraphQuery(query);
+  return fetchHygraphQuery(query, {
+    next: {
+      revalidate: 3600,
+    },
+  });
 };
 
 const Projects = async () => {

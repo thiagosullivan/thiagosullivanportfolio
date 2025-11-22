@@ -253,7 +253,7 @@ const skillData = [
       {
         name: [
           <div className="font-black">• Backend:</div>,
-          "Node.js (Express, Fastify), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB.",
+          "Node.js (Express, Fastify), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB, Python, FastAPI.",
           <div className="mb-5" />,
         ],
       },
@@ -434,7 +434,7 @@ const skillDataPt = [
       {
         name: [
           <div className="font-black">• Backend:</div>,
-          "Node.js (Express, Fastify), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB.",
+          "Node.js (Express, Fastify), Prisma, Supabase, Firebase, MongoDB, Drizzle, NeonDB, Python, FastAPI.",
           <div className="mb-5" />,
         ],
       },

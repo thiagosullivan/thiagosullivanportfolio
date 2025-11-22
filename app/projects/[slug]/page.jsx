@@ -1,12 +1,5 @@
-import { useLanguage } from "@/app/context/LanguageContext";
-import { LanguageContainer } from "@/components/LanguageContainer";
 import SlugContainerText from "@/components/SlugContainerText";
 import { fetchHygraphQuery } from "@/utils/fetch-hygraph-query";
-import { RichText } from "@/utils/rich-text";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { Link2 } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 
 const getPageData = async (slug) => {
   const query = `
@@ -45,11 +38,11 @@ const getPageData = async (slug) => {
         }
       `;
 
-  return fetchHygraphQuery(
-    query
-    //   1000 * 60 * 60 * 24,
-    // 1 day
-  );
+  return fetchHygraphQuery(query, {
+    next: {
+      revalidate: 86400,
+    },
+  });
 };
 
 const PageProject = async ({ params: { slug } }) => {
