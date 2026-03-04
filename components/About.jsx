@@ -151,7 +151,7 @@ const qualificationData = [
       {
         company: "ATS Web Solutions",
         role: "Fullstack Developer",
-        years: "Jun 2024 - Sep 2025",
+        years: "Jun 2024 - Feb 2026",
         link: "https://www.linkedin.com/company/fidentech-solutions",
       },
     ],
@@ -225,7 +225,7 @@ const qualificationDataPt = [
       {
         company: "ATS Web Solutions",
         role: "Desenvolvedor Fullstack",
-        years: "Jun 2024 - Set 2025",
+        years: "Jun 2024 - Feb 2026",
         link: "https://www.linkedin.com/company/fidentech-solutions",
       },
     ],
@@ -787,14 +787,14 @@ const About = () => {
                                     </div>
                                   </div>
                                 );
-                              }
+                              },
                             )}
                           </>
                         ) : (
                           <>
                             {getData(
                               qualificationDataPt,
-                              "experiência"
+                              "experiência",
                             ).data.map((item, index) => {
                               const { company, role, years } = item;
                               return (
@@ -872,7 +872,7 @@ const About = () => {
                                     </div>
                                   </div>
                                 );
-                              }
+                              },
                             )}
                           </>
                         ) : (
@@ -902,7 +902,7 @@ const About = () => {
                                     </div>
                                   </div>
                                 );
-                              }
+                              },
                             )}
                           </>
                         )}
@@ -937,7 +937,7 @@ const About = () => {
                                     <div className="font-medium">{name}</div>
                                   </div>
                                 );
-                              }
+                              },
                             )}
                           </>
                         ) : (
@@ -953,7 +953,7 @@ const About = () => {
                                     <div className="font-medium">{name}</div>
                                   </div>
                                 );
-                              }
+                              },
                             )}
                           </>
                         )}
@@ -998,7 +998,7 @@ const About = () => {
                                     </TooltipProvider>
                                   </div>
                                 );
-                              }
+                              },
                             )}
                           </>
                         ) : (
@@ -1032,7 +1032,7 @@ const About = () => {
                                     </TooltipProvider>
                                   </div>
                                 );
-                              }
+                              },
                             )}
                           </>
                         )}
